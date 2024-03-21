@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 /**
  * 해당 클래스는 간단한 블랙잭 게임의 예제입니다.
- *
+ * <p>
  * do-while로 적절한 코드를 작성하였다면, 간단한 블랙잭 게임이 진행됩니다.
  */
 public class DoWhileIteration {
+
     private static final Random random = new Random();
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -29,20 +30,22 @@ public class DoWhileIteration {
     }
 
     /**
-     * 해당 메서드는 다음과 같은 역할을 가져야 합니다 :
-     * - increaseValue 메서드를 do-While 안에서 사용해야 합니다.
-     * - do-While문의 조건으로 stopGame 메서드를 사용해야 합니다.
+     * 해당 메서드는 다음과 같은 역할을 가져야 합니다 : - increaseValue 메서드를 do-While 안에서 사용해야 합니다. - do-While문의 조건으로
+     * stopGame 메서드를 사용해야 합니다.
      * <p>
-     * 다음과 같은 제한을 가집니다 :
-     * - do-while문을 반드시 이용해야 합니다.
+     * 다음과 같은 제한을 가집니다 : - do-while문을 반드시 이용해야 합니다.
      */
     private static void checkValue() {
-        throw new RuntimeException("이 코드 라인을 지우고, 이곳에서 작성하십시오.");
+
+        do {
+            increaseValue();
+        } while (!stopGame());
     }
 
     public static boolean stopGame() {
-        if (TARGET_VALUE <= currentValue)
+        if (TARGET_VALUE <= currentValue) {
             return true;
+        }
         String nextValue = null;
         while (true) {
             System.out.print("계속 합니까? (Y / N) : ");
